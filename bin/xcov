@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'xcov'
+require 'thor'
+
+module Xcov
+  class CLI < Thor
+    desc 'version', 'Print version'
+    def version
+      puts Xcov::VERSION
+    end
+  end
+end
+
+Xcov::CLI.start(ARGV)
