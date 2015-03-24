@@ -13,4 +13,7 @@ module Xcov
   end
 end
 
+abort "xctool isn't installed" unless system('command -v xctool >/dev/null 2>&1')
+abort "lcov isn't installed" unless system('command -v lcov >/dev/null 2>&1')
+
 Xcov::CLI.start(ARGV)
